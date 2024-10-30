@@ -14,7 +14,7 @@ app.registerExtension({
         if (originalValue !== undefined && value !== originalValue) {
           window["electronAPI"]?.restartApp?.(
             "Restart ComfyUI to apply changes.",
-            1500
+            1500 // add delay to allow changes to take effect before restarting.
           );
         }
       },
