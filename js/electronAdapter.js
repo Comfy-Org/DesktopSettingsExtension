@@ -11,9 +11,12 @@ app.registerExtension({
       type: "boolean",
       defaultValue: true,
       onChange(value) {
-        window["electronAPI"]?.restartApp?.(
-          "Restart ComfyUI to apply changes."
-        );
+        if (originalValue !== undefined && value !== originalValue) {
+          window["electronAPI"]?.restartApp?.(
+            "Restart ComfyUI to apply changes.",
+            1500
+          );
+        }
       },
     },
   ],
