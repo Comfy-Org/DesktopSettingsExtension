@@ -10,8 +10,8 @@ app.registerExtension({
       name: "Automatically check for updates",
       type: "boolean",
       defaultValue: true,
-      onChange(value) {
-        if (originalValue !== undefined && value !== originalValue) {
+      onChange(newValue, oldValue) {
+        if (oldValue !== undefined && newValue !== oldValue) {
           window["electronAPI"]?.restartApp?.(
             "Restart ComfyUI to apply changes.",
             1500 // add delay to allow changes to take effect before restarting.
