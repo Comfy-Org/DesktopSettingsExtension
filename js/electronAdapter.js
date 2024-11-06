@@ -83,9 +83,21 @@ import { app } from "../../scripts/app.js";
           electronAPI.openDevTools();
         },
       },
+      {
+        id: "Comfy-Desktop.OpenFeedbackPage",
+        label: "Feedback",
+        icon: "pi pi-envelope",
+        function() {
+          window.open("https://forum.comfy.org/c/v1-feedback/", "_blank");
+        },
+      },
     ],
 
     menuCommands: [
+      {
+        path: ["Help"],
+        commands: ["Comfy-Desktop.OpenFeedbackPage"],
+      },
       {
         path: ["Help"],
         commands: ["Comfy-Desktop.OpenDevTools"],
