@@ -91,6 +91,15 @@ import { app } from "../../scripts/app.js";
           window.open("https://forum.comfy.org/c/v1-feedback/", "_blank");
         },
       },
+      {
+        id: "Comfy-Desktop.Reinstall",
+        label: "Reinstall",
+        icon: "pi pi-refresh",
+        function() {
+          // TODO(huchenlei): Add a confirmation dialog.
+          electronAPI.reinstall();
+        },
+      }
     ],
 
     menuCommands: [
@@ -112,6 +121,10 @@ import { app } from "../../scripts/app.js";
           "Comfy-Desktop.Folders.OpenCustomNodesFolder",
           "Comfy-Desktop.Folders.OpenModelConfig",
         ],
+      },
+      {
+        path: ["Help"],
+        commands: ["Comfy-Desktop.Reinstall"],
       },
     ],
 
